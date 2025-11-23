@@ -12,10 +12,18 @@ const teamRoutes = require('./routes/teams');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://hrms-frontend.onrender.com'] // Your frontend URL
+    : 'http://localhost:3000',
+  credentials: true
+};
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
+
 
 // Health check
 app.get('/', (req, res) => {
