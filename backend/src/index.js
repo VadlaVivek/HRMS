@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://hrml-frontend.onrender.com'] 
+    ? ['https://hrms-frontend-8rqy.onrender.com'] 
     : 'http://localhost:3000',
   credentials: true
 };
